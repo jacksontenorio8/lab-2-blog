@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Blog</h1>
+    <a href="/create">Criar Novo Post</a>
+    <hr>
+    {% for post in posts %}
+        <h2><a href="/posts/{{ post.id }}">{{ post.title }}</a></h2>
+        <p>{{ post.content[:100] }}...</p>
+        <hr>
+    {% else %}
+        <p>Nenhum post encontrado.</p>
+    {% endfor %}
+</body>
+</html>
